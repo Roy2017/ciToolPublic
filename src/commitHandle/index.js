@@ -5,14 +5,18 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 const main = () => {
   return new Promise((r) => {
-    bootstrap({
-      cliPath: isDev ? path.join(__dirname, '../../node_modules/commitizen') : path.join(process.cwd(), './node_modules/commitizen'),
-      config: {
-        'path': 'cz-conventional-changelog',
-      },
-    }, [], (error) => {
+    try {
+      bootstrap({
+        cliPath: isDev ? path.join(__dirname, '../../node_modules/commitizen') : path.join(process.cwd(), './node_modules/commitizen'),
+        config: {
+          'path': 'cz-conventional-changelog',
+        },
+      }, [], (error) => {
+        r(error);
+      });
+    } catch (error){
       r(error);
-    });
+    }
   });
 };
 
