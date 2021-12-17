@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.36 (2021-12-17)
+
+
+### Features
+
+* **完善commit部分:** 优化commit部分 ([a96c4a4](https://github.com/Roy2017/ciToolPublic/commit/a96c4a4a9ca71d76ed11e1136e57017b3462a641))
+
 ### [0.1.35](https://github.com/Roy2017/ciTool/compare/v0.1.34...v0.1.35) (2021-11-26)
 
 
