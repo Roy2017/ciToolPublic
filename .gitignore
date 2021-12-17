@@ -4,7 +4,7 @@ deploy_versions/
 .rn_temp/
 node_modules/
 .DS_Store
-npm-debug
+npm-debug.log
 
 package/*
 !package/bin/
