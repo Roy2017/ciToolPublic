@@ -2,7 +2,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const rimraf = require('rimraf');
 const fs = require('fs');
-// const fsE = require("fs-extra");
+const fsE = require("fs-extra");
 
 const copyArray = [
   './CHANGELOG.md',
@@ -10,7 +10,6 @@ const copyArray = [
   './ciToolConfig.js',
   './commitlint.config.js',
   './README.md',
-  './myCommitizen',
 ];
 
 // 清空package
@@ -34,6 +33,11 @@ rimraf('./package/src', {}, async () => {
         throw e;
         process.exit(-1);
       });
+    // copy dir
+    const from = path.resolve(cwd, './myCommitizen');
+    const to = path.join(cwd, './package', './myCommitizen');
+    fsE.copy(from, to);
+
     // publish
     // const pCwd = path.resolve(cwd, './package');
     // execSync('npm publish', { cwd: pCwd, env: _env, stdio: [0, 1, 2] });
