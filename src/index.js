@@ -76,7 +76,7 @@ const baseInit = async () => {
   // 填commit
   const commitHandle = await import('./commitHandle/index.js');
   const resBase = await commitHandle.default()
-  console.log('resBase', resBase);
+  // console.log('resBase', resBase);
   if (resBase && resBase.message.indexOf('No files added to staging') != -1) {
     console.log('无需commit, push！');
   } else if (resBase) {
