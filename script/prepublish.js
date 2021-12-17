@@ -35,8 +35,8 @@ rimraf('./package/src', {}, async () => {
         process.exit(-1);
       });
     // publish
-    const pCwd = path.resolve(cwd, './package');
-    execSync('npm publish', { cwd: pCwd, env: _env, stdio: [0, 1, 2] });
+    // const pCwd = path.resolve(cwd, './package');
+    // execSync('npm publish', { cwd: pCwd, env: _env, stdio: [0, 1, 2] });
   } catch (e) {
     console.error(e);
     process.exit(-1);
