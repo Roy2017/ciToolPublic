@@ -1,0 +1,54 @@
+{
+  "name": "xes-citool",
+  "version": "0.1.35",
+  "description": "testCi",
+  "main": "./index.js",
+  "scripts": {
+    "test": "",
+    "dev": "rollup -c -w",
+    "dev2": "rollup -c ./src/commitHandle/rollup.config.js -w",
+    "build": "rollup -c ./src/commitHandle/rollup.config.js&&rollup -c",
+    "update": "node ./package/bin/xes-ciTool.js publish h5",
+    "commit": "node ./package/bin/xes-ciTool.js commit",
+    "p": "node ./script/prepublish.js",
+    "p2": "node ./script/prepublish.mjs"
+  },
+  "bin": {
+    "xes-citool": "./bin/xes-citool.js"
+  },
+  "author": "xes",
+  "license": "ISC",
+  "dependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "chalk": "^4.1.1",
+    "child_process": "^1.0.2",
+    "colors": "^1.3.2",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.0",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "miniprogram-ci": "^1.4.13",
+    "moment": "^2.29.1",
+    "commander": "^8.1.0",
+    "npmview": "^0.0.4",
+    "path": "^0.12.7",
+    "standard-version": "^9.3.1"
+  },
+  "devDependencies": {
+    "rollup": "^2.56.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "peerDependencies": {
+    "husky": "^7.0.0"
+  },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
+  }
+}
