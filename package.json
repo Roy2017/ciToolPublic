@@ -6,12 +6,11 @@
   "scripts": {
     "test": "",
     "dev": "rollup -c -w",
-    "dev2": "rollup -c ./src/commitHandle/rollup.config.js -w",
-    "build": "rollup -c ./src/commitHandle/rollup.config.js&&rollup -c",
+    "dev2": "rollup -c src/commitHandle/rollup.config.js.BAK -w",
+    "build": "rollup -c src/commitHandle/rollup.config.js.BAK&&rollup -c",
     "update": "node ./package/bin/xes-ciTool.js publish h5",
     "commit": "node ./package/bin/xes-ciTool.js commit",
-    "p": "node ./script/prepublish.js",
-    "p2": "node ./script/prepublish.mjs"
+    "p": "node ./script/prepublish.js"
   },
   "bin": {
     "xes-citool": "./bin/xes-citool.js"

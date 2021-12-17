@@ -2,6 +2,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 const rimraf = require('rimraf');
 const fs = require('fs');
+// const fsE = require("fs-extra");
 
 const copyArray = [
   './CHANGELOG.md',
@@ -9,6 +10,7 @@ const copyArray = [
   './ciToolConfig.js',
   './commitlint.config.js',
   './README.md',
+  './myCommitizen',
 ];
 
 // 清空package

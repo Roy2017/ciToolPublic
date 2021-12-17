@@ -65,7 +65,7 @@ program
   });
 
 // git add + commit
-const baseInit = () => {
+const baseInit = async () => {
   console.log(chalk.yellow('git add...'));
   execSync('git add .');
 
@@ -74,8 +74,15 @@ const baseInit = () => {
   console.log(chalk.green('根据git status内容填写commit-msg:'));
 
   // 填commit
-  const exePath = path.resolve(__dirname, './commitHandle/index.js');
-  execSync(`node ${exePath}`, { stdio: [0, 1] });
+  const commitHandle = await import('./commitHandle/index.js');
+  const resBase = await commitHandle.default()
+  console.log('resBase', resBase);
+  if (resBase.message.indexOf('No files added to staging') != -1) {
+    console.log('无需commit, push！');
+  } else {
+    throw resBase;
+    process.exit(-1);
+  }
 
   console.log(chalk.green('\ngit commit成功！'));
 };
@@ -93,16 +100,8 @@ program
 // push
 const actionFnP = async (type, cmd) => {
   // init
-  try {
-    baseInit();
-  } catch (e) {
-    if (e.message.indexOf('No files added to staging') != -1) {
-      console.log('无需commit, push！');
-    } else {
-      throw e;
-      process.exit(-1);
-    }
-  }
+  await baseInit();
+
   // pull
   console.log(chalk.yellow('git pull...'));
   execSync('git pull', { stdio: [1, 2] }); // 测试用
@@ -118,16 +117,7 @@ program
 // publish
 const actionFnPl = async (type, cmd) => {
   // init
-  try {
-    baseInit();
-  } catch (e) {
-    if (e.message.indexOf('No files added to staging') != -1) {
-      console.log('无需commit, publish！');
-    } else {
-      throw e;
-      process.exit(-1);
-    }
-  }
+  await baseInit();
 
   // pull
   console.log(chalk.yellow('git pull...'));
