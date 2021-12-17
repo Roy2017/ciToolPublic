@@ -5,6 +5,7 @@ deploy_versions/
 node_modules/
 .DS_Store
 npm-debug.log
+!myCommitizen/dist
 
 package/*
 !package/bin/
