@@ -1,6 +1,6 @@
 {
   "name": "xes-citool",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "testCi",
   "main": "./index.js",
   "scripts": {

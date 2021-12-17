@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.37](https://github.com/Roy2017/ciToolPublic/compare/v0.1.36...v0.1.37) (2021-12-17)
+
+
+### Features
+
+* **增加复制文件夹:** 文件夹功能 ([1eb9f9c](https://github.com/Roy2017/ciToolPublic/commit/1eb9f9cc70fceab2eaa97ccf197f062aa702f7fb))
+
+
+### Bug Fixes
+
+* **修复.gitignore:** 修复.gitignore问题 ([3bd9bd2](https://github.com/Roy2017/ciToolPublic/commit/3bd9bd2d7f2d2bf24d4393c15a02049a69cf7528))
+
 ### 0.1.36 (2021-12-17)
 
 
