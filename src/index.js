@@ -65,7 +65,7 @@ program
   });
 
 // git add + commit
-const baseInit = async () => {
+const baseInit = async (skipTips = '') => {
   console.log(chalk.yellow('git add...'));
   execSync('git add .');
 
@@ -78,7 +78,7 @@ const baseInit = async () => {
   const resBase = await commitHandle.default()
   // console.log('resBase', resBase);
   if (resBase && resBase.message.indexOf('No files added to staging') != -1) {
-    console.log('无需commit, push！');
+    console.log(`无需commit, ${skipTips} continue！`);
   } else if (resBase) {
     throw resBase;
     process.exit(-1);
@@ -100,7 +100,7 @@ program
 // push
 const actionFnP = async (type, cmd) => {
   // init
-  await baseInit();
+  await baseInit('push');
 
   // pull
   console.log(chalk.yellow('git pull...'));
@@ -117,7 +117,7 @@ program
 // publish
 const actionFnPl = async (type, cmd) => {
   // init
-  await baseInit();
+  await baseInit('publish');
 
   // pull
   console.log(chalk.yellow('git pull...'));
