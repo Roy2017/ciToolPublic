@@ -11,7 +11,7 @@ const main = () => {
         config: {
           'path': 'cz-conventional-changelog',
         },
-      }, ['', '', '--allow-empty'], (error) => {
+      }, [], (error) => {
         r(error);
       });
     } catch (error){
